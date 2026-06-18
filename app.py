@@ -44,7 +44,10 @@ def execute_python_code(code: str):
     finally:
         sys.stdout = old_stdout
 
-
+@app.get("/")
+def home():
+    return {"status": "ok"}
+    
 @app.post("/code-interpreter")
 def code_interpreter(req: CodeRequest):
 
